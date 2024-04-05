@@ -11,7 +11,7 @@
             <form action="convert">
 
                 <label for="amount">Amount of base currency: </label><br>
-                <input type="text" id="amount" name="amount" required><br>
+                <input type="number" id="amount" name="amount" required><br>
 
                 <label for="base-currency">Base currency: </label><br>
                     <select id="base-currency" name="baseCurrency">

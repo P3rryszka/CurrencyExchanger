@@ -32,11 +32,11 @@ public class CurrencyConverterController
 
         if(baseCurrency.equals("USDUSD"))
         {
-            resultValue = (double) currencyConverterService.getQuotes().get(quoteCurrency);
+            resultValue = ((double) currencyConverterService.getQuotes().get(quoteCurrency)) * amount;
         }
         else if(quoteCurrency.equals("USDUSD"))
         {
-            resultValue = 1 / ((double) currencyConverterService.getQuotes().get(baseCurrency));
+            resultValue = (1 / ((double) currencyConverterService.getQuotes().get(baseCurrency))) * amount;
         }
         else
         {
