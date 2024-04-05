@@ -10,11 +10,11 @@
 
             <form action="convert">
 
-                <label for="amount">Amount: </label><br>
-                <input type="text" id="amount" name="amount"><br>
+                <label for="amount">Amount of base currency: </label><br>
+                <input type="text" id="amount" name="amount" required><br>
 
-                <label for="first-currency">First currency: </label><br>
-                    <select id="first-currency" name="firstCurrency">
+                <label for="base-currency">Base currency: </label><br>
+                    <select id="base-currency" name="baseCurrency">
                         <option value="USDAED">AED</option>
                         <option value="USDAFN">AFN</option>
                         <option value="USDALL">ALL</option>
@@ -166,6 +166,7 @@
                         <option value="USDTZS">TZS</option>
                         <option value="USDUAH">UAH</option>
                         <option value="USDUGX">UGX</option>
+                        <option value="USDUSD">USD</option>
                         <option value="USDUYU">UYU</option>
                         <option value="USDUZS">UZS</option>
                         <option value="USDVEF">VEF</option>
@@ -187,8 +188,8 @@
                         <option value="USDZWL">ZWL</option>
                     </select><br>
 
-                <label for="second-currency">Second currency: <label><br>
-                    <select id="second-currency" name="secondCurrency">
+                <label for="quote-currency">Quote currency: <label><br>
+                    <select id="quote-currency" name="quoteCurrency">
                         <option value="USDAED">AED</option>
                         <option value="USDAFN">AFN</option>
                         <option value="USDALL">ALL</option>
@@ -340,6 +341,7 @@
                         <option value="USDTZS">TZS</option>
                         <option value="USDUAH">UAH</option>
                         <option value="USDUGX">UGX</option>
+                        <option value="USDUSD">USD</option>
                         <option value="USDUYU">UYU</option>
                         <option value="USDUZS">UZS</option>
                         <option value="USDVEF">VEF</option>
