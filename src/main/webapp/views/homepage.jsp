@@ -9,6 +9,10 @@
         <h2>Currency conversion</h2><br>
 
             <form action="convert">
+
+                <label for="amount">Amount: </label><br>
+                <input type="text" id="amount" name="amount"><br>
+
                 <label for="first-currency">First currency: </label><br>
                     <select id="first-currency" name="firstCurrency">
                         <option value="USDAED">AED</option>

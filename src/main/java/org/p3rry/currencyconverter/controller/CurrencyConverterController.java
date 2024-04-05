@@ -25,12 +25,13 @@ public class CurrencyConverterController
     @GetMapping("/convert")
     public ModelAndView getModel(@RequestParam("firstCurrency") String firstCurrency,
                                  @RequestParam("secondCurrency") String secondCurrency,
+                                 @RequestParam("amount") double amount,
                                  ModelAndView mv)
     {
         double firstCurrencyValue = (double) currencyConverterService.getQuotes().get(firstCurrency);
         double secondCurrencyValue = (double) currencyConverterService.getQuotes().get(secondCurrency);
 
-        double resultValue = secondCurrencyValue/firstCurrencyValue;
+        double resultValue = (secondCurrencyValue/firstCurrencyValue) * amount;
 
         String formattedResultValue = String.format("%.2f", resultValue);
 
