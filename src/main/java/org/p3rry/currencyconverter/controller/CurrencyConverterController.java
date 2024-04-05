@@ -32,7 +32,9 @@ public class CurrencyConverterController
 
         double resultValue = secondCurrencyValue/firstCurrencyValue;
 
-        mv.addObject("result", resultValue);
+        String formattedResultValue = String.format("%.2f", resultValue);
+
+        mv.addObject("result", formattedResultValue);
         mv.setViewName("resultpage");
 
         return mv;
