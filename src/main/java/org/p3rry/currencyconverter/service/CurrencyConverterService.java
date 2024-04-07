@@ -32,18 +32,9 @@ public class CurrencyConverterService
         String sourceValue = Optional.of(getSourceValue())
                 .orElseThrow(() ->
                         new NullPointerException("Source value is null!"));
-        
-        double parsedIntoDoubleAmount;
-        double resultValue;
 
-        if(amount.isEmpty())
-        {
-            parsedIntoDoubleAmount = 1;
-        }
-        else
-        {
-            parsedIntoDoubleAmount = Double.parseDouble(amount);
-        }
+        double resultValue;
+        double parsedIntoDoubleAmount = isAmountEmpty(amount);
 
         if(baseCurrency.equals(sourceValue) && quoteCurrency.equals(sourceValue))
         {
@@ -66,6 +57,11 @@ public class CurrencyConverterService
         }
 
         return String.format("%.2f", resultValue);
+    }
+
+    private double isAmountEmpty(String amount)
+    {
+        return amount.isEmpty() ? 1 : Double.parseDouble(amount);
     }
 
     private JSONObject getQuotesObject()
