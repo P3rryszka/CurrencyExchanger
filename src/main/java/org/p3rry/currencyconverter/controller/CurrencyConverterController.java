@@ -23,32 +23,13 @@ public class CurrencyConverterController
     }
 
     @GetMapping("/convert")
-    public ModelAndView getModel(@RequestParam("baseCurrency") String baseCurrency,
-                                 @RequestParam("quoteCurrency") String quoteCurrency,
-                                 @RequestParam("amount") double amount,
-                                 ModelAndView mv)
+    public ModelAndView getResultPage(@RequestParam("baseCurrency") String baseCurrency,
+                                    @RequestParam("quoteCurrency") String quoteCurrency,
+                                    @RequestParam("amount") String amount,
+                                    ModelAndView mv)
     {
-        double resultValue;
 
-        if(baseCurrency.equals("USDUSD"))
-        {
-            resultValue = ((double) currencyConverterService.getQuotes().get(quoteCurrency)) * amount;
-        }
-        else if(quoteCurrency.equals("USDUSD"))
-        {
-            resultValue = (1 / ((double) currencyConverterService.getQuotes().get(baseCurrency))) * amount;
-        }
-        else
-        {
-            double baseCurrencyValue = (double) currencyConverterService.getQuotes().get(baseCurrency);
-            double quoteCurrencyValue = (double) currencyConverterService.getQuotes().get(quoteCurrency);
-
-            resultValue = (quoteCurrencyValue / baseCurrencyValue) * amount;
-        }
-
-        String formattedResultValue = String.format("%.2f", resultValue);
-
-        mv.addObject("result", formattedResultValue);
+        mv.addObject("result", currencyConverterService.processResult(baseCurrency, quoteCurrency, amount));
         mv.setViewName("resultpage");
 
         return mv;

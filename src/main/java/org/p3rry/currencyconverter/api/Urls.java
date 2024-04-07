@@ -7,5 +7,5 @@ import org.springframework.stereotype.Component;
 @Data
 public class Urls
 {
-    private final String apiUrl = "http://api.exchangerate.host/live?YOUR_UNIQUE_ACCESS_KEY";
+    private final String apiUrl = "http://api.exchangerate.host/live?access_key=7eb030001dbb35c092813d0152411238";
 }
