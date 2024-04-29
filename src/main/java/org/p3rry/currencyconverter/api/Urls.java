@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.stereotype.Component;
 
 @Component
-@Data
+@Getter
 public class Urls
 {
     private final String apiUrl = "http://api.exchangerate.host/live?YOUR_UNIQUE_ACCESS-KEY";
